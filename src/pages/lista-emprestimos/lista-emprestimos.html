@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Empréstimos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let emprestimo of emprestimos">
+
+    <ion-item>
+      <ion-icon name="calendar" item-left medium></ion-icon>
+      <h2>{{ emprestimo.data | date:'mediumDate'}}</h2>
+      <p>Data</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pricetag" item-start medium></ion-icon>
+      <h2>{{ emprestimo.valor | currency:'BRL':true }}</h2>
+      <p>Valor inicial</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="logo-usd" item-left medium></ion-icon>
+      <h2>{{ emprestimo.valorReajustado | currency:'BRL':true }} (em breve)</h2>
+      <p>Valor reajustado</p>
+    </ion-item>
+
+    <ion-item text-center>
+      <button ion-button clear (click)="quitar(emprestimo)">
+        QUITAR
+      </button>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>

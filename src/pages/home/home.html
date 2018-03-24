@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Empréstaki
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-item>
+    <ion-label floating>Credor</ion-label>
+    <ion-input type="text" [(ngModel)]="nomeCredor"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Devedor</ion-label>
+    <ion-input type="text" [(ngModel)]="nomeDevedor"></ion-input>
+  </ion-item>
+
+  <div padding>
+    <button block ion-button color="light" (click)="obterListaEmprestimos(nomeCredor, nomeDevedor)">Procurar</button>
+  </div>
+
 </ion-content>
